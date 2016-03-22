@@ -1,0 +1,3 @@
+<% if @user.errors[field_name].present? %>
+	  <span class="help-block"><%= @user.errors[field_name].join(', ') %></span>
+<% end %>

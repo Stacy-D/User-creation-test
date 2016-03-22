@@ -1,0 +1,15 @@
+<%= form_for(@user, remote: true) do |f| %>
+	  <div class="form-group <%= 'has-error' if @user.errors[:name].present? %>">
+		    <label>Name:</label>
+		    <%= f.text_field :name, class: 'form-control' %>
+		    <%= render partial: 'field_error', locals: { field_name: :name } %>
+		  </div>
+	  <div class="form-group <%= 'has-error' if @user.errors[:email].present? %>">
+		    <label>Email:</label>
+		    <%= f.text_field :email, class: 'form-control' %>
+	    <%= render partial: 'field_error', locals: { field_name: :email } %>
+		  </div>
+	  <div class="form-group">
+		    <%= f.submit 'Save', class: 'btn btn-primary' %>
+		 </div>
+	<% end %>
